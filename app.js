@@ -22,4 +22,14 @@ module.exports = async function (fastify, opts) {
     dir: path.join(__dirname, 'routes'),
     options: Object.assign({}, opts)
   })
+
+  const fastify = require('fastify')()
+
+fastify.register(require('fastify-mongodb'), {
+  // force to close the mongodb connection when app stopped
+  // the default value is false
+  forceClose: true,
+  
+  url: env.process.MONGODB_URL
+})
 }
