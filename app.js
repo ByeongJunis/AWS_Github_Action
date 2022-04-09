@@ -28,6 +28,6 @@ fastify.register(require('fastify-mongodb'), {
   // the default value is false
   forceClose: true,
   
-  url: env.process.MONGODB_URL
+  url: process.env.MONGODB_URL
 })
 }
